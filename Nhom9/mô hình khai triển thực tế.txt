@@ -1,0 +1,15 @@
+	MÔ HÌNH TRIỀN KHAI THỰC TẾ
+bean : định nghĩa kiểu dữ liệu
+dao : lấy dữ liệu về bộ nhớ và cấp nhật dữ liệu
+bo: Xử lý dữ liệu
+view: Hiển thị dữ liệu
+
+bean:	songuyen a,b;
+dao:	a=5,b=6;
+bo:	s=a+b;
+view:	in ra s
+
+    Sơ đồ khối
+view->bo;view->bean
+bo->dao;bo->bean
+dao->bean
