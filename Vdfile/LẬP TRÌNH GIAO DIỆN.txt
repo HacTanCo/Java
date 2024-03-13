@@ -1,0 +1,21 @@
+							LẬP TRÌNH GIAO DIỆN
+1/ Lập trình hướng sự kiện
+
+- Sự kiện:
+	Chuột
+	Phím
+
+Đáp ứng sự kiện:
+1. Tạo ra 1 Frame:
+ Thao tác đầu tiên là chọn ---Layout: Abssolute
+2. JtexField: để nhập xuất dữ liệu
+
+Thuộc tính : Vảiable:  đặt tên cho JtexField: cp: txtten
+Lấy giá trị ra: txtten.getText()
+Đưa giá trị vào: txtten.setText(Chuỗi)
+Sự kiện: Keypressed: xảy ra khi nhấn phím
+Lẫy mã phím vừa nhậpp: e.getkeycode()
+Enter: 10, ESC: 27, a: 97, A : 65, 0 : 48
+
+---Lập trình trên đối tượng ( điều khiển) nào ?
+---Lập trình trên sự kiện nào của đối tượng đó
