@@ -1,4 +1,3 @@
-							LẬP TRÌNH GIAO DIỆN
 1/ Lập trình hướng sự kiện
 
 - Sự kiện:
@@ -7,7 +6,10 @@
 
 Đáp ứng sự kiện:
 1. Tạo ra 1 Frame:
+
  Thao tác đầu tiên là chọn ---Layout: Abssolute
+ Sự kiện windowOpend: xảy ra khi vừa chạy Jframe lên
+ Sự kiện windowClosing: xảy ra trước khi đóng Jframe
 2. JtexField: để nhập xuất dữ liệu
 
 Thuộc tính : Vảiable:  đặt tên cho JtexField: cp: txtten
@@ -19,3 +21,15 @@ Enter: 10, ESC: 27, a: 97, A : 65, 0 : 48
 
 ---Lập trình trên đối tượng ( điều khiển) nào ?
 ---Lập trình trên sự kiện nào của đối tượng đó
+
+4. Jcombobox
+
+Thuộc tính: Variable: đặt tên: cmbTen
+Đưa giá trị vào: cmbTen.âddItem(chuỗi)
+Lấy mục vừa chọn: cmbTen.getSeletedItem()
+SỰ kiện: ItemStateChanged: xảy ra khi chọn 1 mục
+
+1 JTabbedPane->JScrollPane->Jtable
+
+
+kik nút bán là ra mh,th,sl,gb,date hiện tại
