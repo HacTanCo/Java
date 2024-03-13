@@ -1,0 +1,6 @@
+Le Trong Hoang Dat;03/10/1969;Nam;0.8;Rot;Kem
+Nguyen Quang Lan;12/10/1981;Nu;0.2;Rot;Kem
+Do Quang Thinh;26/03/1988;Nam;4.1;Rot;Yeu
+Le Trong Hoang Lan;24/05/1978;Nu;2.3;Rot;Kem
+Do Tan Thinh;22/06/1994;Nu;2.6;Rot;Kem
+Hac Tan Co;24/04/1994;Nam;10.0;Dau;Gioi
