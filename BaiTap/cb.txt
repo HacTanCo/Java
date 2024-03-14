@@ -1,0 +1,5 @@
+cb1|Hac Tan Co|4.4
+cb2|Do Trong Hoang Lan|3.3
+cb3|Le Quang Dat|2.2
+cb4|Nguyen Quoc Thinh|1.1
+cb5|Trinh Cong Binh Minh|1.1
