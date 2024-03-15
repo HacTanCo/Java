@@ -37,4 +37,8 @@ public class Nguoibo {
 		tam.add(new ThongkeBean(false,ds.size()-dem));
 		return tam;
 	}
+	public void showx() throws Exception{
+		
+			
+	}
 }

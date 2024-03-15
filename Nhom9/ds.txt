@@ -2,3 +2,14 @@ lan;false;12/11/2004;20
 dat;true;11/01/2004;20
 thinh;false;19/05/2004;20
 co;true;24/04/2004;20
+
+
+1- tạo file ds.txt để lưu sinh viên, nhân viên,người
+2- mở nguoidao, mở hàm getds để nộp các dòng hợp lệ all sv,nv,nguoi vào mảng ds,dòng hợp lệ ( đọc slide 61):
+	2.1- người có 3 thông tin
+		sv có 6 thông tin
+		nv có 7 thông tin
+	2.2- email,sđt,(dd/MM/yyyy)ngày sinh phải đúng
+	2.3- msv,mnv k đc bắt đầu bởi số
+
+nếu dòng k hợp lệ thì lưu vào file loi.txt theo cú pháp: số dòng,lỗi 1,lỗi 2,...

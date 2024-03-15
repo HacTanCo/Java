@@ -54,7 +54,7 @@ public class Nguoi {
 	@Override
 	public String toString() {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		return hoten+";"+gioitinh+";"+sdf.format(ngaysinh)+";"+getTuoi();
+		return hoten+"|"+gioitinh+"|"+sdf.format(ngaysinh)+"|"+getTuoi();
 	}
 	
 	public int getTuoi() {
