@@ -1,0 +1,6 @@
+Do Trong Hoang Lan|false|12/11/2004|20
+Le Quang Dat|true|11/01/2004|20
+sv1|Hac Tan Co|false|24/04/2004|K46H|10.0
+sv2|Nguyen Quoc Thinh|true|12/11/2004|20|K46A|9.9
+nv1|Nguyen Xuan Minh Hieu|false|02/04/2004|nv1@gmail.com|0123456789|4.4
+nv2|Trinh Cong Binh Minh|true|02/02/2004|nv2@gmail.com|0123456788|4.3

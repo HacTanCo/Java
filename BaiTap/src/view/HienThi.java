@@ -65,8 +65,10 @@ public class HienThi extends JFrame {
 	 * Create the frame.
 	 */
 	ArrayList<CanBoBean> ds = new ArrayList<CanBoBean>();
+	private JTable table_1;
 	
 	public HienThi() {
+		setTitle("Hắc Tấn Có");
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowOpened(WindowEvent e) {
@@ -123,7 +125,7 @@ public class HienThi extends JFrame {
 						String line = r.readLine();
 						if (line == null || line == "")
 							break;
-						String[] che = line.split("\\|");
+						String[] che = line.split("[|]");
 						String ma=che[0];
 						String ht=che[1];
 						double hsl = Double.parseDouble(che[2]);
@@ -225,5 +227,13 @@ public class HienThi extends JFrame {
 		
 		table = new JTable();
 		scrollPane.setViewportView(table);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		tabbedPane.addTab("Cán bộ 1", null, scrollPane_1, null);
+		
+		table_1 = new JTable();
+		scrollPane_1.setViewportView(table_1);
+		
+		
 	}
 }

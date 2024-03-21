@@ -15,7 +15,7 @@ public class CanBoDao {
 			String line = r.readLine();
 			if(line==null || line=="")
 				break;
-			String[] che = line.split("\\|");
+			String[] che = line.split("[|]");
 			String ma=che[0];
 			String ht=che[1];
 			double hsl = Double.parseDouble(che[2]);
