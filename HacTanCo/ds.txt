@@ -1,4 +1,0 @@
-22T1020557;Hac Tan Co;7.8;8.9
-22T1020193;Do Trong Hoang Lan;8.9;9.1
-22T1020065;Le Quang Dat;5.6;6.7;7.8
-22T1080036;Nguyen Quoc Thinh;6.7;7.8;8.9
