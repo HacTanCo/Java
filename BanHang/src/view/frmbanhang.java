@@ -10,6 +10,7 @@ import javax.swing.table.DefaultTableModel;
 import bean.hangbean;
 import bo.hangbo;
 import dao.hangdao;
+import dao.ketnoidao;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -17,6 +18,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import java.awt.Font;
 import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
@@ -168,21 +170,40 @@ public class frmbanhang extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e)  {
 				try {
-					Double a = Double.parseDouble(txtgb.getText());
-					Double b = Double.parseDouble(txtsl.getText());
-					Double kq = a * b;
-					txtthanhtien.setText(kq.toString());
-
-					// th sl gb tt nm
-					String th = cmbhang.getSelectedItem().toString();
 					String sl = txtsl.getText().toString();
-					String gb = txtgb.getText().toString();
-					SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
-					java.util.Date n = new java.util.Date();
-					String nm = sdf.format(n);
-					String l = th+","+sl+","+gb+","+(Integer.parseInt(sl) * Double.parseDouble(gb)) +","+nm;
-					ds1.add(l);
-					napbangban(ds1);
+					for(hangbean i : ds) {
+						if(Integer.parseInt(sl) > i.getSl() && txtmh.getText().equals(i.getMh())) {
+							JOptionPane.showMessageDialog(null, "Số lượng hàng trong kho không đủ");
+							break;
+						}
+						if(Integer.parseInt(sl) <= i.getSl() && txtmh.getText().equals(i.getMh())) {
+							Double a = Double.parseDouble(txtgb.getText());
+							Double b = Double.parseDouble(txtsl.getText());
+							Double kq = a * b;
+							txtthanhtien.setText(kq.toString());
+							i.setSl(i.getSl() - Integer.parseInt(sl));
+							String sql = "update hang set sl = sl - ? where mh =?";
+							PreparedStatement ps = ketnoidao.cn.prepareStatement(sql);
+							ps.setInt(1, Integer.parseInt(sl));
+							ps.setString(2, txtmh.getText().toString());
+							ps.executeUpdate();
+							
+							// th sl gb tt nm
+							String th = cmbhang.getSelectedItem().toString();
+							String gb = txtgb.getText().toString();
+							SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+							java.util.Date n = new java.util.Date();
+							String nm = sdf.format(n);
+							String l = th+","+sl+","+gb+","+(Integer.parseInt(sl) * Double.parseDouble(gb)) +","+nm;
+							ds1.add(l);
+							napbangban(ds1);
+							
+						}
+							
+					}
+					
+
+					
 				} catch (Exception e2) {
 					// TODO: handle exception
 					e2.printStackTrace();
@@ -460,12 +481,12 @@ public class frmbanhang extends JFrame {
 		});
 		btnNewButton_8.setForeground(Color.RED);
 		btnNewButton_8.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_8.setBounds(147, 657, 156, 30);
+		btnNewButton_8.setBounds(132, 656, 184, 31);
 		contentPane.add(btnNewButton_8);
 		
 		JButton btnNewButton_9 = new JButton("Tiền Lời");
 		btnNewButton_9.addMouseListener(new MouseAdapter() {
-			@Override
+			 @Override
 			public void mouseClicked(MouseEvent e) {
 				try {
 					double sum = 0;
