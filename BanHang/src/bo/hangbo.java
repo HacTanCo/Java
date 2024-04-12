@@ -19,6 +19,9 @@ public class hangbo {
 	public void ketnoi() throws Exception {
 		knd.ketnoi();
 	}
+	public void ketnoivaomay(String servername,String user,String password) throws Exception{
+		knd.ketnoivaomay(servername, user, password);
+	}
 	public ArrayList<hangbean> gethang() throws Exception {
 		ds = hd.gethang();
 		return ds;
