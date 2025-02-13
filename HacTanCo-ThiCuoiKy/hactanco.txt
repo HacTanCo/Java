@@ -1,0 +1,6 @@
+MB1;may a;12/2/2022;100000;100;nha may a
+MB2;may b;22/2/2022;200000;120;nha may b
+MB3;may c;2/2/2022;300000;50;nha may c
+MXT1;may d;31/4/2013;89099;60;xanh;16
+MXT2;may e;30/4/2013;89099;70;xanh;14
+MXT3;may f;22/4/2013;89099;80;xanh;16.5
