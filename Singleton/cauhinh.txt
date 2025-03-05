@@ -1,0 +1,2 @@
+TXT
+C:\Users\Administrator\Desktop\HTC\Java\Singleton
