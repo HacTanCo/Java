@@ -1,0 +1,3 @@
+sv1;nguyen van a;true;2004/01/01
+sv2;nguyen van b;false;2004/02/02
+sv3;nguyen van c;true;2004/03/03
