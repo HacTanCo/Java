@@ -1,0 +1,2 @@
+txt
+C:\Users\Administrator\Desktop\HTC\Java\SimpleFactory

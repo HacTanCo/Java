@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+import Bean.CauHinh;
 import Bean.SinhVien;
 
 public class TextFileSinhVienDAO implements SinhVienDAO {
@@ -17,8 +18,7 @@ public class TextFileSinhVienDAO implements SinhVienDAO {
 	public ArrayList<SinhVien> listSinhVien = new ArrayList<SinhVien>();
 	@Override
 	public ArrayList<SinhVien> DocDanhSach() throws Exception {
-		
-		FileReader fr = new FileReader("sinhvien.txt");
+		FileReader fr = new FileReader(CauHinh.getInstance().getChuoiKetNoi()+"/sinhvien.txt");
 		BufferedReader br = new BufferedReader(fr);
 		while(true) {
 			String line = br.readLine();
@@ -34,11 +34,24 @@ public class TextFileSinhVienDAO implements SinhVienDAO {
 
 	@Override
 	public void BoSung(SinhVien x) throws Exception {
-		FileWriter fw = new FileWriter("sinhvien.txt",true);
-		PrintWriter ghi = new PrintWriter(fw);
-		ghi.println(x.getMaSinhVien()+";"+x.getHoTen()+";"+x.isGoiTinh()+";"+sdf.format(x.getNgaySinh()));
-		ghi.close();
-		listSinhVien.add(x);
+		int dem = 0;
+		for (SinhVien i : listSinhVien) {
+			if(x.getMaSinhVien().equals(i.getMaSinhVien())) {
+				dem++;
+				break;
+			}
+		}
+		if(dem == 0 ) {
+			FileWriter fw = new FileWriter(CauHinh.getInstance().getChuoiKetNoi()+"/sinhvien.txt",true);
+			PrintWriter ghi = new PrintWriter(fw);
+			ghi.println(x.getMaSinhVien()+";"+x.getHoTen()+";"+x.isGoiTinh()+";"+sdf.format(x.getNgaySinh()));
+			ghi.close();
+			listSinhVien.add(x);
+		}
+		else {
+			System.out.println("\nMa sinh vien da ton tai !!!");
+		}
+		
 	}
 
 	@Override
@@ -49,7 +62,7 @@ public class TextFileSinhVienDAO implements SinhVienDAO {
 			if(maSinhVien.equals(x.getMaSinhVien()))
 				iterator.remove();
 		}
-		FileWriter fw = new FileWriter("sinhvien.txt",false);
+		FileWriter fw = new FileWriter(CauHinh.getInstance().getChuoiKetNoi()+"/sinhvien.txt",false);
 		PrintWriter ghi = new PrintWriter(fw);
 		for (SinhVien x : listSinhVien) {
 			ghi.println(x.getMaSinhVien()+";"+x.getHoTen()+";"+x.isGoiTinh()+";"+sdf.format(x.getNgaySinh()));
@@ -59,18 +72,21 @@ public class TextFileSinhVienDAO implements SinhVienDAO {
 	public static void main(String[] args) throws Exception{
 		TextFileSinhVienDAO a = new TextFileSinhVienDAO();
 		ArrayList<SinhVien> listSinhVien = a.DocDanhSach();
+		//doc
 		System.out.println("Danh sach tu file txt !!!");
 		for (SinhVien i : listSinhVien) {
 			System.out.println(i.toString());
 		}
+		//them
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-//		a.BoSung(new SinhVien("sv4", "Nguyen Van D", true, new Date(sdf.parse("2004/4/4").getTime())));
-//		System.out.println("Danh sach sau khi bo sung !!!");
-//		for (SinhVien i : listSinhVien) {
-//			System.out.println(i.toString());
-//		}
+		a.BoSung(new SinhVien("sv4", "Nguyen Van D", true, new Date(sdf.parse("2004/4/4").getTime())));
+		System.out.println("\nDanh sach sau khi bo sung !!!");
+		for (SinhVien i : listSinhVien) {
+			System.out.println(i.toString());
+		}
+		//xoa
 		a.Xoa("sv4");
-		System.out.println("Danh sach sau khi xoa !!!");
+		System.out.println("\nDanh sach sau khi xoa !!!");
 		for (SinhVien i : listSinhVien) {
 			System.out.println(i.toString());
 		}
